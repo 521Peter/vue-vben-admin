@@ -1,0 +1,1 @@
+import{Q as u,r as e,w as i}from"./index.js";import{d as a}from"./vue-f962b0e4.js";const m=a({name:"Authority",props:{value:{type:[Number,Array,String],default:""}},setup(n,{slots:r}){const{hasPermission:o}=u();function s(){const{value:t}=n;return t?o(t)?e(r):null:e(r)}return()=>s()}}),l=i(m);export{l as A};
