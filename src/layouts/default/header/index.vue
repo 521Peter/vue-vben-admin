@@ -46,7 +46,7 @@
         :class="`${prefixCls}-action__item`"
       />
 
-      <UserDropDown :theme="getHeaderTheme" />
+      <!-- <UserDropDown :theme="getHeaderTheme" /> -->
 
       <SettingDrawer v-if="getShowSetting" :class="`${prefixCls}-action__item`" />
     </div>
@@ -72,7 +72,7 @@
   import { SettingButtonPositionEnum } from '/@/enums/appEnum'
   import { AppLocalePicker } from '/@/components/Application'
 
-  import { UserDropDown, LayoutBreadcrumb, FullScreen, Notify } from './components'
+  import { LayoutBreadcrumb, FullScreen, Notify } from './components'
   import { useAppInject } from '/@/hooks/web/useAppInject'
   import { useDesign } from '/@/hooks/web/useDesign'
 
@@ -87,7 +87,6 @@
       LayoutTrigger,
       LayoutBreadcrumb,
       LayoutMenu,
-      UserDropDown,
       AppLocalePicker,
       FullScreen,
       Notify,

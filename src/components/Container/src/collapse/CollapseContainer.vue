@@ -8,7 +8,6 @@
         <slot name="action"></slot>
       </template>
     </CollapseHeader>
-
     <div class="p-2">
       <CollapseTransition :enable="canExpan">
         <Skeleton v-if="loading" :active="loading" />
