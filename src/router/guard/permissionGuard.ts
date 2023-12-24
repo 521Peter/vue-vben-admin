@@ -13,7 +13,7 @@ const LOGIN_PATH = PageEnum.BASE_LOGIN
 
 const ROOT_PATH = RootRoute.path
 
-const whitePathList: PageEnum[] = [LOGIN_PATH]
+const whitePathList: PageEnum[] = [LOGIN_PATH, PageEnum.BASE_HOME, PageEnum.BASE_SETUP]
 
 export function createPermissionGuard(router: Router) {
   const userStore = useUserStoreWithOut()
@@ -25,6 +25,8 @@ export function createPermissionGuard(router: Router) {
       userStore.getUserInfo.homePath &&
       userStore.getUserInfo.homePath !== PageEnum.BASE_HOME
     ) {
+      console.log(11111)
+
       next(userStore.getUserInfo.homePath)
       return
     }
@@ -33,16 +35,19 @@ export function createPermissionGuard(router: Router) {
 
     // Whitelist can be directly entered
     if (whitePathList.includes(to.path as PageEnum)) {
-      if (to.path === LOGIN_PATH && token) {
-        const isSessionTimeout = userStore.getSessionTimeout
-        try {
-          await userStore.afterLoginAction()
-          if (!isSessionTimeout) {
-            next((to.query?.redirect as string) || '/')
-            return
-          }
-        } catch {}
-      }
+      console.log(44444)
+
+      await userStore.afterLoginAction()
+      // if (to.path === LOGIN_PATH && token) {
+      //   const isSessionTimeout = userStore.getSessionTimeout
+      //   try {
+      //     await userStore.afterLoginAction()
+      //     if (!isSessionTimeout) {
+      //       next((to.query?.redirect as string) || '/')
+      //       return
+      //     }
+      //   } catch {}
+      // }
       next()
       return
     }
