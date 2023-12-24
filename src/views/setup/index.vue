@@ -3,6 +3,7 @@
     <a-button type="primary" @click="handleStart">开始</a-button>
   </PageWrapper>
 </template>
+
 <script lang="ts">
   import { defineComponent } from 'vue'
   import { PageWrapper } from '/@/components/Page'
