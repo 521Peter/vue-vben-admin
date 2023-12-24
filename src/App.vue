@@ -29,7 +29,6 @@
   const { prefixCls } = useDesign('login')
 
   /** 手动登录 */
-
   handleLogin()
   // Listening to page changes and dynamically changing site titles
   useTitle()
